@@ -1,0 +1,34 @@
+<br>
+
+
+                <a class="btn btn-primary" [routerLink]="['/']"
+                routerLinkActive="router-link-active">Regresar</a>&nbsp;
+<button type="button" class="btn btn-primary" [routerLink]="['/new-bicicleta']"
+    routerLinkActive="router-link-active">Nuevo</button>
+    
+<br>
+<table class="table table-hover">
+    <thead class="bg-primary text-white">
+        <tr>
+            <td>Id</td>
+            <td>Marca</td>
+            <td>Tipo</td>
+            <td>Precio</td>
+            <td colspan="3">Acciones</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let bicicleta of bicicletas">
+            <td>{{ bicicleta._id}}</td> 
+            <td>{{ bicicleta.marca }}</td>
+            <td>{{ bicicleta.tipo }}</td>
+            <td>{{ bicicleta.precio }}</td>
+            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',bicicleta._id]"
+                    routerLinkActive="router-link-active">Ver</a></td>
+            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',bicicleta._id]"
+                    routerLinkActive="router-link-active">Editar</a></td>
+            <td><a (click) = "deleteBicicleta(bicicleta._id)" class="btn btn-danger text-white">Eliminar</a></td>
+        </tr>
+    </tbody>
+</table>
