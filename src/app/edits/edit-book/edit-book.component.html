@@ -33,9 +33,31 @@
                 </div>
             </div>
             <div class="form-group">
-                <button (click)="updateBicicleta(bookName.value, author.value, isbn.value)" type="submit"
+                <label class="col-md-4">Descripcion</label>
+                <input type="text" class="form-control" formControlName="summary" #summary
+                    [(ngModel)]="bookToEdit.summary" />
+            </div>
+            <div *ngIf="editBook.controls['summary'].invalid && (editBook.controls['summary'].dirty || editBook.controls['summary'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editBook.controls['summary'].errors.required">
+                    Descripcion requerida.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Paginas</label>
+                <input type="text" class="form-control" formControlName="pages" #pages
+                    [(ngModel)]="bookToEdit.pages" />
+            </div>
+            <div *ngIf="editBook.controls['pages'].invalid && (editBook.controls['pages'].dirty || editBook.controls['pages'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editBook.controls['pages'].errors.required">
+                    Cantidad de paginas requerida.
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="updateBook(bookName.value, author.value, isbn.value , summary.value, pages.value)" type="submit"
                     class="btn btn-primary" [disabled]="editBook.invalid">
-                    Actualizar bicicleta
+                    Actualizar libro
                 </button>&nbsp;<a class="btn btn-primary" [routerLink]="['/list-bicicletas']"
                     routerLinkActive="router-link-active">Cancelar</a>
             </div>

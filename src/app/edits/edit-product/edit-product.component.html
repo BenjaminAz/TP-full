@@ -1,1 +1,66 @@
-<p>edit-product works!</p>
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="editProduct" novalidate>
+            <div class="form-group">
+                <label class="col-md-4">Nombre</label>
+                <input type="text" class="form-control" formControlName="ProductName" #ProductName [(ngModel)]="productToEdit.ProductName" />
+            </div>
+            <div *ngIf="editProduct.controls['ProductName'].invalid && (editProduct.controls['ProductName'].dirty || editProduct.controls['ProductName'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editProduct.controls['ProductName'].errors.required">
+                    Nombre de lproducto requerido.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Descripcion</label>
+                <input type="text" class="form-control" formControlName="ProductDescription" #ProductDescription [(ngModel)]="productToEdit.ProductDescription" />
+            </div>
+            <div *ngIf="editProduct.controls['ProductDescription'].invalid && (editProduct.controls['ProductDescription'].dirty || editProduct.controls['ProductDescription'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editProduct.controls['ProductDescription'].errors.required">
+                    Descripcion requerida
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Precio</label>
+                <input type="text" class="form-control" formControlName="ProductPrice" #ProductPrice
+                    [(ngModel)]="productToEdit.ProductPrice" />
+            </div>
+            <div *ngIf="editProduct.controls['ProductPrice'].invalid && (editProduct.controls['ProductPrice'].dirty || editProduct.controls['ProductPrice'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editProduct.controls['ProductPrice'].errors.required">
+                    Precio requerido.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Descripcion</label>
+                <input type="text" class="form-control" formControlName="summary" #summary
+                    [(ngModel)]="productToEdit.summary" />
+            </div>
+            <div *ngIf="editProduct.controls['summary'].invalid && (editProduct.controls['summary'].dirty || editProduct.controls['summary'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editProduct.controls['summary'].errors.required">
+                    Descripcion requerida.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Paginas</label>
+                <input type="text" class="form-control" formControlName="pages" #pages
+                    [(ngModel)]="productToEdit.pages" />
+            </div>
+            <div *ngIf="editProduct.controls['pages'].invalid && (editProduct.controls['pages'].dirty || editProduct.controls['pages'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editProduct.controls['pages'].errors.required">
+                    Cantidad de paginas requerida.
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="updateBook(ProductName.value, ProductDescription.value, ProductPrice.value)" type="submit"
+                    class="btn btn-primary" [disabled]="editProduct.invalid">
+                    Actualizar producto
+                </button>&nbsp;<a class="btn btn-primary" [routerLink]="['/list-bicicletas']"
+                    routerLinkActive="router-link-active">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,1 +1,33 @@
-<p>edit-alumno works!</p>
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="editAlumno" novalidate>
+            <div class="form-group">
+                <label class="col-md-4">Nombre</label>
+                <input type="text" class="form-control" formControlName="studentName" #studentName [(ngModel)]="bikeToEdit.studentName" />
+            </div>
+            <div *ngIf="editAlumno.controls['studentName'].invalid && (editAlumno.controls['studentName'].dirty || editAlumno.controls['studentName'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editAlumno.controls['studentName'].errors.required">
+                    Nombre requerido.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Apellido</label>
+                <input type="text" class="form-control" formControlName="studentLasName" #studentLasName [(ngModel)]="bikeToEdit.studentLasName" />
+            </div>
+            <div *ngIf="editAlumno.controls['studentLasName'].invalid && (editAlumno.controls['studentLasName'].dirty || editAlumno.controls['studentLasName'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editAlumno.controls['studentLasName'].errors.required">
+                    Apellido requerido.
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="updateBicicleta(studentName.value, studentLasName.value)" type="submit"
+                    class="btn btn-primary" [disabled]="editAlumno.invalid">
+                    Actualizar bicicleta
+                </button>&nbsp;<a class="btn btn-primary" [routerLink]="['/list-bicicletas']"
+                    routerLinkActive="router-link-active">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

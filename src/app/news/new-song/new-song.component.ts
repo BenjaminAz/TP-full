@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SongsService } from '../services/songs.service';
+import { SongsService } from '../../services/songs.service';
 
 @Component({
   selector: 'app-new-song',

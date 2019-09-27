@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { BooksService } from '../services/books.service';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-new-book',

@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListBicicletasComponent } from './list-bicicletas/list-bicicletas.component';
 import { HomeComponent } from './home/home.component';
-import { EditBicicletaComponent } from './edit-bicicleta/edit-bicicleta.component';
-import { NewBikeComponent } from './add-bicicleta/add-bicicleta.component';
+import { EditBicicletaComponent } from './edits/edit-bicicleta/edit-bicicleta.component';
+import { NewBikeComponent } from './news/add-bicicleta/add-bicicleta.component';
 import { ViewBicicletaComponent } from './view-bicicleta/view-bicicleta.component';
-import { NewBookComponent } from './new-book/new-book.component';
-import { NewAlumnoComponent } from './new-alumno/new-alumno.component';
-import { NewProductComponent } from './new-product/new-product.component';
-import { NewSongComponent } from './new-song/new-song.component';
+import { NewBookComponent } from './news/new-book/new-book.component';
+import { NewAlumnoComponent } from './news/new-alumno/new-alumno.component';
+import { NewProductComponent } from './news/new-product/new-product.component';
+import { NewSongComponent } from './news/new-song/new-song.component';
 
 
 const routes: Routes = [

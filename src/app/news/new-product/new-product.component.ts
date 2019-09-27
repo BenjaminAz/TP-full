@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ProductosService } from '../services/productos.service';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-new-product',

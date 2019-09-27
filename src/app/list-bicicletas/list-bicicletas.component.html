@@ -3,7 +3,7 @@
 <br>
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+        aria-haspopup="true" aria-expanded="true">
         Nuevo
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -22,7 +22,7 @@
             <h5 class="mb-0">
                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne">
-                    Collapsible Group Item #1
+                    Bicicletas
                 </button>
             </h5>
         </div>
@@ -65,7 +65,7 @@
             <h5 class="mb-0">
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
-                    Collapsible Group Item #2
+                    Productos
                 </button>
             </h5>
         </div>
@@ -89,11 +89,11 @@
                             <td>{{ product.ProductName }}</td>
                             <td>{{ product.ProductDescription }}</td>
                             <td>{{ product.ProductPrice }}</td>
-                            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',asd._id]"
+                            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',product._id]"
                                     routerLinkActive="router-link-active">Ver</a></td>
-                            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',asd._id]"
+                            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',product._id]"
                                     routerLinkActive="router-link-active">Editar</a></td>
-                            <td><a (click)="deleteBicicleta(asd._id)" class="btn btn-danger text-white">Eliminar</a>
+                            <td><a (click)="deleteBicicleta(product._id)" class="btn btn-danger text-white">Eliminar</a>
                             </td>
                         </tr>
                     </tbody>
@@ -107,7 +107,7 @@
             <h5 class="mb-0">
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #4
+                    Libros
                 </button>
             </h5>
         </div>
@@ -147,7 +147,7 @@
             <h5 class="mb-0">
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #5
+                    Canciones
                 </button>
             </h5>
         </div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BicicletasService } from '../services/bicicletas.service';
-import { Bicicleta } from '../model/bicicleta';
+import { BicicletasService } from '../../services/bicicletas.service';
+import { Bicicleta } from '../../model/bicicleta';
 
 
 @Component({

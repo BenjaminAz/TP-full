@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { BicicletasService } from '../services/bicicletas.service';
+import { BicicletasService } from '../../services/bicicletas.service';
 
 @Component({
   selector: 'app-add-bicicleta',
