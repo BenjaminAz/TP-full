@@ -10,6 +10,7 @@ export class BooksService {
   url: 'http://localhost:5000/api/v1'
 
   constructor( private httpClient: HttpClient) { }
+
   getBooks() {
     return this
       .httpClient
@@ -22,31 +23,38 @@ export class BooksService {
       .get(`${this.url}/books/${id}`);
   }
 
-
-  updateBook(book: Book {
+  /**
+   * Actualiza un alumno específico
+   * @param alumno 
+   */
+  
+  updateBook(book: Book) {
     this
       .httpClient
-      .put(`${this.url}/books/update/${book._id}`, Book)
+      .put(`${this.url}/books/update/${book._id}`, book)
       .subscribe(res => console.log('Envío a actualización exitoso'));
   }
 
 
-  addBook(marca, tipo, precio) {
+  addBook(bookName, author, isbn, summary, pages) {
 
-    const newBike: book = {
+    const newBook: Book = {
       _id: 0,
-      marca: marca,
-      tipo: tipo,
-      precio: precio,
+      bookName: bookName,
+      author: author,
+      isbn: isbn,
+      summary: summary,
+      pages: pages
     }
-    this.httpClient.post(`${this.url}/books/add`, newBike)
+    this.httpClient.post(`${this.url}/books/add`, newBook)
       .subscribe(res => console.log('Envío a grabación exitoso'));
   }
 
-  deletebook(id) {
+  deleteBook(id) {
     return this
       .httpClient
       .delete(`${this.url}/books/delete/${id}`);
   }
+
 
 }

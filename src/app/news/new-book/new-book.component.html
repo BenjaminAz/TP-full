@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="newBook" novalidate>
+            <div class="form-group">
+                <label class="col-md-4">Nombre</label>
+                <input type="text" class="form-control" formControlName="bookName" #bookName />
+            </div>
+            <div *ngIf="newBook.controls['bookName'].invalid && (newBook.controls['bookName'].dirty || newBook.controls['bookName'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="newBook.controls['bookName'].errors.required">
+                    Nombre requerido
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Autor</label>
+                <input type="text" class="form-control" formControlName="author" #author />
+            </div>
+            <div *ngIf="newBook.controls['author'].invalid && (newBook.controls['author'].dirty || newBook.controls['author'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="newBook.controls['author'].errors.required">
+                    Autor requerido
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">ISBN</label>
+                <input type="text" class="form-control" formControlName="isbn" #isbn />
+            </div>
+            <div *ngIf="newBook.controls['isbn'].invalid && (newBook.controls['isbn'].dirty || newBook.controls['isbn'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="newBook.controls['isbn'].errors.required">
+                    ISBN requerido
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Descripcion</label>
+                <input type="text" class="form-control" formControlName="summary" #summary />
+            </div>
+            <div *ngIf="newBook.controls['summary'].invalid && (newBook.controls['summary'].dirty || newBook.controls['summary'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="newBook.controls['summary'].errors.required">
+                    Descripcion requerida
+                </div>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4">Paginas</label>
+                    <input type="text" class="form-control" formControlName="pages" #pages />
+                </div>
+                <div *ngIf="newBook.controls['pages'].invalid && (newBook.controls['pages'].dirty || newBook.controls['pages'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="newBook.controls['pages'].errors.required">
+                        Cantidad de paginas requerido
+                    </div>
+                </div>
+            <div class="form-group">
+                <button (click)="addBook(bookName.value, author.value, isbn.value, summary.value, pages.value)" type="submit"
+                    class="btn btn-primary" [disabled]="newBook.pristine || newBook.invalid">
+                    Agregar Libro
+                </button>&nbsp;
+
+                <a class="btn btn-primary" [routerLink]="['/list-bicicletas']"
+                    routerLinkActive="router-link-active">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

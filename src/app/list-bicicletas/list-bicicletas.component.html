@@ -1,34 +1,184 @@
 <br>
-
-
-                <a class="btn btn-primary" [routerLink]="['/']"
-                routerLinkActive="router-link-active">Regresar</a>&nbsp;
-<button type="button" class="btn btn-primary" [routerLink]="['/new-bicicleta']"
-    routerLinkActive="router-link-active">Nuevo</button>
-    
+<a class="btn btn-primary" [routerLink]="['/']" routerLinkActive="router-link-active">Regresar</a>&nbsp;
 <br>
-<table class="table table-hover">
-    <thead class="bg-primary text-white">
-        <tr>
-            <td>Id</td>
-            <td>Marca</td>
-            <td>Tipo</td>
-            <td>Precio</td>
-            <td colspan="3">Acciones</td>
-        </tr>
-    </thead>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Nuevo
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" [routerLink]="['/new-bicicleta']">Bicicleta</a>
+        <a class="dropdown-item" [routerLink]="['/new-alumno']">Alumno</a>
+        <a class="dropdown-item" [routerLink]="['/new-book']">Libro</a>
+        <a class="dropdown-item" [routerLink]="['/new-product']">Producto</a>
+    </div>
+</div>
 
-    <tbody>
-        <tr *ngFor="let bicicleta of bicicletas">
-            <td>{{ bicicleta._id}}</td> 
-            <td>{{ bicicleta.marca }}</td>
-            <td>{{ bicicleta.tipo }}</td>
-            <td>{{ bicicleta.precio }}</td>
-            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',bicicleta._id]"
-                    routerLinkActive="router-link-active">Ver</a></td>
-            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',bicicleta._id]"
-                    routerLinkActive="router-link-active">Editar</a></td>
-            <td><a (click) = "deleteBicicleta(bicicleta._id)" class="btn btn-danger text-white">Eliminar</a></td>
-        </tr>
-    </tbody>
-</table>
+<br>
+<!--==========-->
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    Collapsible Group Item #1
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <td>Id</td>
+                            <td>Marca</td>
+                            <td>Tipo</td>
+                            <td>Pre</td>
+                            <td colspan="4">Acciones</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let bicicleta of bicicletas">
+                            <td>{{ bicicleta._id}}</td>
+                            <td>{{ bicicleta.marca }}</td>
+                            <td>{{ bicicleta.tipo }}</td>
+                            <td>{{ bicicleta.precio }}</td>
+                            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',bicicleta._id]"
+                                    routerLinkActive="router-link-active">Ver</a></td>
+                            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',bicicleta._id]"
+                                    routerLinkActive="router-link-active">Editar</a></td>
+                            <td><a (click)="deleteBicicleta(bicicleta._id)"
+                                    class="btn btn-danger text-white">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    Collapsible Group Item #2
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+
+                <table class="table table-hover">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Price</td>
+                            <td colspan="3">Acciones</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let product of productos">
+                            <td>{{ product._id}}</td>
+                            <td>{{ product.ProductName }}</td>
+                            <td>{{ product.ProductDescription }}</td>
+                            <td>{{ product.ProductPrice }}</td>
+                            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',asd._id]"
+                                    routerLinkActive="router-link-active">Ver</a></td>
+                            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',asd._id]"
+                                    routerLinkActive="router-link-active">Editar</a></td>
+                            <td><a (click)="deleteBicicleta(asd._id)" class="btn btn-danger text-white">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    Collapsible Group Item #4
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Author</td>
+                            <td>ISBN</td>
+                            <td colspan="3">Acciones</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let book of books">
+                            <td>{{ book._id}}</td>
+                            <td>{{ book.bookName }}</td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.isbn }}</td>
+                            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',book._id]"
+                                    routerLinkActive="router-link-active">Ver</a></td>
+                            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',book._id]"
+                                    routerLinkActive="router-link-active">Editar</a></td>
+                            <td><a (click)="deleteBicicleta(book._id)" class="btn btn-danger text-white">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    Collapsible Group Item #5
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+
+                <table class="table table-hover">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Author</td>
+                            <td colspan="3">Acciones</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let song of songs">
+                            <td>{{ song._id}}</td>
+                            <td>{{ song.songName }}</td>
+                            <td>{{ song.author }}</td>
+                            <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',song._id]"
+                                    routerLinkActive="router-link-active">Ver</a></td>
+                            <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',song._id]"
+                                    routerLinkActive="router-link-active">Editar</a></td>
+                            <td><a (click)="deleteSong(song._id)" class="btn btn-danger text-white">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>.
+            </div>
+        </div>
+    </div>
+</div>

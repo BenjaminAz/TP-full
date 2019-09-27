@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="editBook" novalidate>
+            <div class="form-group">
+                <label class="col-md-4">Nombre</label>
+                <input type="text" class="form-control" formControlName="bookName" #bookName [(ngModel)]="bookToEdit.bookName" />
+            </div>
+            <div *ngIf="editBook.controls['bookName'].invalid && (editBook.controls['bookName'].dirty || editBook.controls['bookName'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editBook.controls['bookName'].errors.required">
+                    Nombre de libro requerido.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Autor</label>
+                <input type="text" class="form-control" formControlName="author" #author [(ngModel)]="bookToEdit.author" />
+            </div>
+            <div *ngIf="editBook.controls['author'].invalid && (editBook.controls['author'].dirty || editBook.controls['author'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editBook.controls['author'].errors.required">
+                    Nombre de autor requerido.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">ISBN</label>
+                <input type="text" class="form-control" formControlName="isbn" #isbn
+                    [(ngModel)]="bookToEdit.isbn" />
+            </div>
+            <div *ngIf="editBook.controls['isbn'].invalid && (editBook.controls['isbn'].dirty || editBook.controls['isbn'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editBook.controls['isbn'].errors.required">
+                    ISBN requerido.
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="updateBicicleta(bookName.value, author.value, isbn.value)" type="submit"
+                    class="btn btn-primary" [disabled]="editBook.invalid">
+                    Actualizar bicicleta
+                </button>&nbsp;<a class="btn btn-primary" [routerLink]="['/list-bicicletas']"
+                    routerLinkActive="router-link-active">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

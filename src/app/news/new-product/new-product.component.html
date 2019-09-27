@@ -1,0 +1,45 @@
+<div class="card">
+        <div class="card-body">
+            <form [formGroup]="newProduct" novalidate>
+                <div class="form-group">
+                    <label class="col-md-4">Nombre</label>
+                    <input type="text" class="form-control" formControlName="ProductName" #ProductName />
+                </div>
+                <div *ngIf="newProduct.controls['ProductName'].invalid && (newProduct.controls['ProductName'].dirty || newProduct.controls['ProductName'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="newProduct.controls['ProductName'].errors.required">
+                        Nombre requerido.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4">Descripcion</label>
+                    <input type="text" class="form-control" formControlName="ProductDescription" #ProductDescription />
+                </div>
+                <div *ngIf="newProduct.controls['ProductDescription'].invalid && (newProduct.controls['ProductDescription'].dirty || newProduct.controls['ProductDescription'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="newProduct.controls['ProductDescription'].errors.required">
+                        Descripcion requerida
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4">Precio</label>
+                    <input type="text" class="form-control" formControlName="ProductPrice" #ProductPrice />
+                </div>
+                <div *ngIf="newProduct.controls['ProductPrice'].invalid && (newProduct.controls['ProductPrice'].dirty || newProduct.controls['ProductPrice'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="newProduct.controls['ProductPrice'].errors.required">
+                        El precio es requerido.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button (click)="addProduct(ProductName.value, ProductDescription.value, ProductPrice.value)" type="submit"
+                        class="btn btn-primary" [disabled]="newProduct.pristine || newProduct.invalid">
+                        Agregar Bicicleta
+                    </button>&nbsp;
+    
+                    <a class="btn btn-primary" [routerLink]="['/list-bicicletas']"
+                    routerLinkActive="router-link-active">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>

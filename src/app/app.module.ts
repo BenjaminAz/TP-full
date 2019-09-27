@@ -15,6 +15,18 @@ import { ConfirmationDialogService } from './confirmation-dialog/confirmation-di
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { ViewBicicletaComponent } from './view-bicicleta/view-bicicleta.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BooksService } from './services/books.service';
+import { ProductosService } from './services/productos.service';
+import { AlumnosService } from './services/alumnos.service';
+import { SongsService } from './services/songs.service';
+import { NewAlumnoComponent } from './new-alumno/new-alumno.component';
+import { NewBookComponent } from './new-book/new-book.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import { NewSongComponent } from './new-song/new-song.component';
+import { EditAlumnoComponent } from './edit-alumno/edit-alumno.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { EditSongComponent } from './edit-song/edit-song.component';
 
 
 @NgModule({
@@ -26,7 +38,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     NewBikeComponent,
     ViewBicicletaComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    NewAlumnoComponent,
+    NewBookComponent,
+    NewProductComponent,
+    NewSongComponent,
+    EditAlumnoComponent,
+    EditBookComponent,
+    EditProductComponent,
+    EditSongComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +57,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [
     BicicletasService,
+    BooksService,
+    ProductosService,
+    AlumnosService,
+    SongsService,
     ConfirmationDialogService
   ],
   entryComponents: [ ConfirmationDialogComponent ],

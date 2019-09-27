@@ -1,0 +1,35 @@
+<div class="card">
+        <div class="card-body">
+            <form [formGroup]="newAlumno" novalidate>
+                <div class="form-group">
+                    <label class="col-md-4">Nombre</label>
+                    <input type="text" class="form-control" formControlName="studentName" #studentName />
+                </div>
+                <div *ngIf="newAlumno.controls['studentName'].invalid && (newAlumno.controls['studentName'].dirty || newAlumno.controls['studentName'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="newAlumno.controls['studentName'].errors.required">
+                        Nombre requerido
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4">Apellido</label>
+                    <input type="text" class="form-control" formControlName="studentLastName" #studentLastName />
+                </div>
+                <div *ngIf="newAlumno.controls['studentLastName'].invalid && (newAlumno.controls['studentLastName'].dirty || newAlumno.controls['studentLastName'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="newAlumno.controls['studentLastName'].errors.required">
+                        Apellido requerido
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button (click)="addAlumno(studentName.value, studentLastName.value)" type="submit"
+                        class="btn btn-primary" [disabled]="newAlumno.pristine || newAlumno.invalid">
+                        Agregar Alumno
+                    </button>&nbsp;
+    
+                    <a class="btn btn-primary" [routerLink]="['/list-bicicletas']"
+                    routerLinkActive="router-link-active">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
