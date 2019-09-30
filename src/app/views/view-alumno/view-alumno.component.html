@@ -1,0 +1,13 @@
+<div class="container">
+        <h2>Detalle de alumno</h2>
+        <div class="card">
+            <div class="card-header bg-primary text-white">Ficha de alumno</div>
+            <div class="card-body">
+                <p>Marca: {{alumno.studentName}}</p>
+                <p>Tipo: {{alumno.studentLastName}}</p>
+            </div>
+            <div class="card-footer">No existe mas información a mostrar acerca de la alumno</div>
+        </div>
+        <br>
+        <a [routerLink]="['/list-bicicletas']" class="btn btn-primary">Regresar</a>
+    </div>

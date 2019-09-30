@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewBicicletaComponent } from './view-bicicleta.component';
+import { CollapsesComponent } from './collapses.component';
 
-describe('ViewBicicletaComponent', () => {
-  let component: ViewBicicletaComponent;
-  let fixture: ComponentFixture<ViewBicicletaComponent>;
+describe('CollapsesComponent', () => {
+  let component: CollapsesComponent;
+  let fixture: ComponentFixture<CollapsesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewBicicletaComponent ]
+      declarations: [ CollapsesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewBicicletaComponent);
+    fixture = TestBed.createComponent(CollapsesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

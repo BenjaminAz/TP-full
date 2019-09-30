@@ -1,0 +1,28 @@
+
+<button type="button" class="collapsible">Canciones</button>
+<div class="content">
+    <table class="table table-hover">
+        <thead class="bg-primary text-white">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Author</td>
+                <td colspan="3">Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let song of songs">
+                <td>{{ song._id}}</td>
+                <td>{{ song.songName }}</td>
+                <td>{{ song.author }}</td>
+                <td><a class="btn btn-primary" [routerLink]="['/view-song',song._id]"
+                        routerLinkActive="router-link-active">Ver</a></td>
+                <td><a class="btn btn-primary" [routerLink]="['/edit-song',song._id]"
+                        routerLinkActive="router-link-active">Editar</a></td>
+                <td><a (click)="deleteSong(song._id)" class="btn btn-danger text-white">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

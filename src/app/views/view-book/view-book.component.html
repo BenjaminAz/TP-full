@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Detalle de libro</h2>
+    <div class="card">
+        <div class="card-header bg-primary text-white">Ficha de libro</div>
+        <div class="card-body">
+            <p>Nombre: {{book.bookName}}</p>
+            <p>Autor: {{book.author}}</p>
+            <p>ISBN: {{book.isbn}}</p>
+            <p>Paginas: {{book.pages}}</p>
+            <p>Descripcion: {{book.summary}}</p>
+        </div>
+        <div class="card-footer">No existe mas información a mostrar acerca del libro</div>
+    </div>
+    <br>
+    <a [routerLink]="['/list-bicicletas']" class="btn btn-primary">Regresar</a>
+</div>

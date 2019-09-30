@@ -1,0 +1,29 @@
+
+
+<button type="button" class="collapsible">Alumnos</button>
+<div class="content">
+    <table class="table table-hover">
+        <thead class="bg-primary text-white">
+            <tr>
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td colspan="3">Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let alumno of alumnos">
+                <td>{{ alumno._id}}</td>
+                <td>{{ alumno.studentName }}</td>
+                <td>{{ alumno.StudentLastName }}</td>
+                <td><a class="btn btn-primary" [routerLink]="['/view-alumno',alumno._id]"
+                        routerLinkActive="router-link-active">Ver</a></td>
+                <td><a class="btn btn-primary" [routerLink]="['/edit-alumno',alumno._id]"
+                        routerLinkActive="router-link-active">Editar</a></td>
+                <td><a (click)="deleteAlumno(alumno._id)" class="btn btn-danger text-white">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

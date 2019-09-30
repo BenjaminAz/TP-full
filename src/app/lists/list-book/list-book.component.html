@@ -1,0 +1,31 @@
+
+<button type="button" class="collapsible">Libros</button>
+<div class="content">
+    <table class="table table-hover">
+        <thead class="bg-primary text-white">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Author</td>
+                <td>ISBN</td>
+                <td colspan="3">Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{ book._id}}</td>
+                <td>{{ book.bookName }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.isbn }}</td>
+                <td><a class="btn btn-primary" [routerLink]="['/view-bicicleta',book._id]"
+                        routerLinkActive="router-link-active">Ver</a></td>
+                <td><a class="btn btn-primary" [routerLink]="['/edit-bicicleta',book._id]"
+                        routerLinkActive="router-link-active">Editar</a></td>
+                <td><a (click)="deleteBicicleta(book._id)" class="btn btn-danger text-white">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

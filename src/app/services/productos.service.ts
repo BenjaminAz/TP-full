@@ -23,7 +23,6 @@ export class ProductosService {
       .get(`${this.url}/products/${id}`);
   }
 
-
   updateProduct(product: Products) {
     this
       .httpClient
@@ -49,7 +48,5 @@ export class ProductosService {
       .httpClient
       .delete(`${this.url}/products/delete/${id}`);
   }
-
-
 
 }

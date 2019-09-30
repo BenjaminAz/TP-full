@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Detalle de Producto</h2>
+    <div class="card">
+        <div class="card-header bg-primary text-white">Ficha de Producto</div>
+        <div class="card-body">
+            <p>Nombre: {{product.ProductName}}</p>
+            <p>Paginas: {{product.ProductDespcription}}</p>
+            <p>Descripcion: {{product.ProductPrice}}</p>
+        </div>
+        <div class="card-footer">No existe mas información a mostrar acerca del producto</div>
+    </div>
+    <br>
+    <a [routerLink]="['/list-bicicletas']" class="btn btn-primary">Regresar</a>
+</div>
